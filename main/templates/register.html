@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<form method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <button>Submit</button>>
+    {% if messages %}
+        <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</form>>
+
+</body>
+</html>

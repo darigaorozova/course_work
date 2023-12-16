@@ -1,22 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registration</title>
-</head>
-<body>
-<form method='POST'>
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<section>
+  <div class="login">
+  {% if page == 'signin'%}
+  <h1>Sign in</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username ">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password ">
+    <input class="auth-btn auth-btn-red" type="submit" value="Sign in">
+  </form>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  <span>Not registered yet?</span>
+  <a class="auth-btn auth-btn-white" href="{% url 'Register' %}">Sign up</a>
+  </div>
+  {% else %}
+  <div class="login">
+  <h1>Sign up</h1>
+  <form action="" method="POST">
     {% csrf_token %}
     {{form}}
-    <button>Submit</button>>
+    <input class="auth-btn auth-btn-white" type="submit" value="Register">
     {% if messages %}
-        <ul>
+    <ul class="messages">
       {% for message in messages %}
       <li>{{ message }}</li>
         {% endfor %}
     </ul>
     {% endif %}
-</form>>
-
-</body>
-</html>
+    <span>Already registered ?</span>
+  </form>
+  <a class="auth-btn auth-btn-red" href="{% url 'Login' %}">Sign in</a>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

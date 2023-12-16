@@ -10,26 +10,9 @@
                 <h5 class="card-title">{{i.price}}</h5>
                 <p class="card-text">{{i.description}}</p>
             </div>
-               <a href="#" class="btn btn-primary">Add to cart</a>
+               <a href="#" class="btn btn-primary">Adopt</a>
         </div>
     </div>
     {%endfor%}
 </div>
 {% endblock%}
-
-<div class="registration-section">
-    <h2>Register</h2>
-    <form action="process_registration.php" method="post">
-        <!-- Добавьте поля для ввода имени, электронной почты, пароля и других необходимых данных -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Register</button>
-    </form>
-</div>
-

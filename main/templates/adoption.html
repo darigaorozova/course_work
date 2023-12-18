@@ -13,9 +13,9 @@
 
 <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; margin: 0 auto; max-width: 100vw;">
     {% for animal in animals %}
-    <div class="col">
+    <div class="col" style="width: 200px; margin: 0px;" >
       <div class="card" style="width: 18rem;margin:18px">
-        <img src="{{ animal.imageURL }}" class="card-img-top" alt="...">
+        <img src="{{ animal.imageURL }}" class="card-img-top" alt="..." style="height: 18rem; width: 18rem">
         <div class="card-body">
           <h5 class="card-title">{{ animal.name }}</h5>
           <h5 class="card-title">{{ animal.price }}</h5>

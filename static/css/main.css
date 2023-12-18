@@ -1,0 +1,76 @@
+.carousel-caption.caption-left-top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+}
+
+.carousel-caption.caption-right-top {
+    position: absolute;
+    top: 20px;
+    left: auto;
+    right: 20px;
+    padding: 20px;
+    text-align: right;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+}
+
+.carousel-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-caption.text-end, .carousel-caption.text-start {
+    max-width: 250px;
+}
+
+.carousel-caption.text-end h5,
+.carousel-caption.text-start h5 {
+    font-size: 40px;
+}
+
+.carousel-caption.text-end p,
+.carousel-caption.text-start p {
+    font-size: 25px;
+}
+
+.carousel-caption.text-end,
+.carousel-caption.text-start {
+    width: 100%;
+    max-width: 600px;
+}
+h1 {
+    text-align: center;
+    background: rgba(153, 108, 54, 0.72);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image {
+    flex: 1 0 24%;
+    margin: 8px;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

@@ -1,0 +1,130 @@
+.carousel-caption.caption-left-top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+}
+
+div {
+
+}
+
+.carousel-caption.caption-right-top {
+    position: absolute;
+    top: 20px;
+    left: auto;
+    right: 20px;
+    padding: 20px;
+    text-align: right;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+}
+
+.carousel-container-about {
+    max-width: 45%;
+    float: left;
+    margin-right: 20px;
+}
+
+.carousel-caption.text-end, .carousel-caption.text-start {
+    max-width: 250px;
+}
+
+.carousel-caption.text-end h5,
+.carousel-caption.text-start h5 {
+    font-size: 28px;
+}
+
+.carousel-caption.text-end p,
+.carousel-caption.text-start p {
+    font-size: 18px;
+}
+
+.carousel-caption.text-end,
+.carousel-caption.text-start {
+    width: 100%;
+    max-width: 500px;
+}
+h1 {
+    text-align: center;
+    background: rgba(153, 108, 54, 0.72);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image {
+    flex: 1 0 24%;
+    margin: 8px;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.contact-section {
+    background-color: rgba(0, 0, 0, 0) !important;
+    padding: 40px 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0);
+    padding: 0;
+    border-radius: 0;
+}
+
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    font-family: "Agency FB";
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-item {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-item h3 {
+    color: #333;
+}
+
+.contact-item p {
+    color: #666;
+}
+
+

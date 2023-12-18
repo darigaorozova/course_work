@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from .models import Animal
 from .models import Category
+from .models import AboutUs
 
 # Create your views here.
 def main(request):
@@ -68,4 +69,6 @@ def adoption(request):
     animals = Animal.objects.filter(category__title__icontains=q)
     return render(request,'adoption.html', {'categories': categories, 'animals': animals})
 
-
+def about_us(request):
+    about_us_info = AboutUs.objects.first()
+    return render(request, 'about.html', {'about_us_info': about_us_info})

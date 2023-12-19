@@ -34,3 +34,14 @@ class AboutUs(models.Model):
 
     def __str__(self):
         return self.title
+
+class Donation(models.Model):
+    name = models.CharField(max_length=255)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    credit_card_number = models.CharField(max_length=16)
+
+class VolunteerApplication(models.Model):
+    full_name = models.CharField(max_length=255)
+    age = models.IntegerField()
+    reasons_for_volunteering = models.TextField()
+    skills = models.TextField()

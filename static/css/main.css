@@ -1,11 +1,17 @@
+body {
+    background-color: rgba(91, 68, 38, 0.74);
+}
+
 .carousel-caption.caption-left-top {
     position: absolute;
     top: 20px;
     left: 20px;
     padding: 20px;
     text-align: left;
+    font-family: 'Poppins', serif;
+    font-weight: 600;
     background: rgba(0, 0, 0, 0);
-    color: #fff;
+    color: rgb(255, 255, 255);
     width: 100%;
     max-width: 300px;
 }
@@ -17,14 +23,16 @@
     right: 20px;
     padding: 20px;
     text-align: right;
+    font-family: 'Poppins', serif;
+    font-weight: 600;
     background: rgba(0, 0, 0, 0);
-    color: #fff;
+    color: rgba(77, 59, 33, 0.74);
     width: 100%;
     max-width: 300px;
 }
 
 .carousel-container {
-    max-width: 100%;
+    max-width: 75%;
     margin: 0 auto;
 }
 
@@ -73,4 +81,39 @@ body {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.card {
+    width: 18rem;
+    margin: 18px;
+}
+
+.card img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #8B4513;
+    border-color: #8B4513;
+}
+
+.btn-primary:hover {
+    background-color: #A0522D;
+    border-color: #A0522D;
+}
+
+
+.card-container {
+    position: relative;
+}
+
+.learn-more-button {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 1050px; /* Пример отрицательного значения для сдвига вправо */
+    margin-bottom: -5px;
+    background-color: rgb(66, 31, 11);
 }

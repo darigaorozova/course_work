@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/donate-volunteer.css' %}">
+    <div class="form-container">
+    <h2 class="form-title">Volunteer</h2>
+    <form method="post" action="{% url 'Volunteer' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.full_name.label_tag }}
+            {{ form.full_name }}
+        </div>
+        <div class="form-group">
+            {{ form.age.label_tag }}
+            {{ form.age }}
+        </div>
+        <div class="form-group">
+            {{ form.reasons_for_volunteering.label_tag }}
+            {{ form.reasons_for_volunteering }}
+        </div>
+        <div class="form-group">
+            {{ form.skills.label_tag }}
+            {{ form.skills }}
+        </div>
+        <button type="submit" class="form-submit">Submit Volunteer Application</button>
+    </form>
+  </div>
+{% endblock %}

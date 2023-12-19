@@ -8,6 +8,7 @@ from django.shortcuts import render
 from .models import Animal
 from .models import Category
 from .models import AboutUs
+from .form import DonationForm, VolunteerApplicationForm
 
 # Create your views here.
 def main(request):
@@ -72,3 +73,24 @@ def adoption(request):
 def about_us(request):
     about_us_info = AboutUs.objects.first()
     return render(request, 'about.html', {'about_us_info': about_us_info})
+
+def donate(request):
+    if request.method == 'POST':
+        form = DonationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Добавьте код для обработки успешного внесения пожертвования
+            return redirect('success_page')  # Замените 'success_page' на ваше представление успешного внесения
+    else:
+        form = DonationForm()
+    return render(request, 'donate.html', {'form': form})
+
+def volunteer(request):
+    if request.method == 'POST':
+        form = VolunteerApplicationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success_page')  # Замените 'success_page' на ваше представление успешной заявки
+    else:
+        form = VolunteerApplicationForm()
+    return render(request, 'volunteer.html', {'form': form})

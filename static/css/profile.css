@@ -1,44 +1,31 @@
-body {
-    background: rgb(99, 39, 120)
+
+.profile-info {
+  max-width: 350px;
+  margin: 20px;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-control:focus {
-    box-shadow: none;
-    border-color: #BA68C8
+.profile-info p {
+  font-size: 18px;
+  margin: 10px 0;
 }
 
-.profile-button {
-    background: rgb(99, 39, 120);
-    box-shadow: none;
-    border: none
+.logout-link {
+  display: block;
+  width: 350px;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: #421f0b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
-.profile-button:hover {
-    background: #682773
-}
-
-.profile-button:focus {
-    background: #682773;
-    box-shadow: none
-}
-
-.profile-button:active {
-    background: #682773;
-    box-shadow: none
-}
-
-.back:hover {
-    color: #682773;
-    cursor: pointer
-}
-
-.labels {
-    font-size: 11px
-}
-
-.add-experience:hover {
-    background: #BA68C8;
-    color: #fff;
-    cursor: pointer;
-    border: solid 1px #BA68C8
+.logout-link:hover {
+  background-color: rgba(114, 86, 50, 0.74);
 }

@@ -79,8 +79,7 @@ def donate(request):
         form = DonationForm(request.POST)
         if form.is_valid():
             form.save()
-            # Добавьте код для обработки успешного внесения пожертвования
-            return redirect('success_page')  # Замените 'success_page' на ваше представление успешного внесения
+            return redirect('Donate')
     else:
         form = DonationForm()
     return render(request, 'donate.html', {'form': form})
@@ -90,7 +89,7 @@ def volunteer(request):
         form = VolunteerApplicationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success_page')  # Замените 'success_page' на ваше представление успешной заявки
+            return redirect('Volunteer')
     else:
         form = VolunteerApplicationForm()
     return render(request, 'volunteer.html', {'form': form})

@@ -7,6 +7,7 @@ from .models import Donation
 
 admin.site.register(Animal)
 admin.site.register(Category)
+admin.site.register(Order)
 
 @admin.register(VolunteerApplication)
 class VolunteerAdmin(admin.ModelAdmin):

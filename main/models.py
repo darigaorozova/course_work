@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Category(models.Model):
@@ -26,6 +26,9 @@ class Animal(models.Model):
             url = ''
         return url
 
+class Order(models.Model):
+    animals = models.ManyToManyField(Animal)
+    customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=False)
 class AboutUs(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()

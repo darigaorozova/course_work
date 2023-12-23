@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from .models import Animal
 from .models import Category
-from .models import AboutUs
+from .models import Order
 from .form import DonationForm, VolunteerApplicationForm
 
 # Create your views here.
@@ -62,17 +62,39 @@ def sign_up(request):
     return render(request, 'register.html', {'form': form})
 @login_required(login_url='Login')
 def profile(request):
-    return render(request, 'profile.html')
+    orders = Order.objects.all()
+    new_orders = []
+    for item in orders:
+        if item.customer == request.user:
+            new_orders.insert(0, item)
+    if request.method == 'POST':
+        if request.POST.get('del'):
+            current_orders = Order.objects.get(id=request.POST.get('del'))
+            current_orders.delete()
+        else:
+            print(request.POST.get('del'))
+    data = {
+        'orders': new_orders,
+        'not_null': len(new_orders)
+    }
+
+    return render(request, 'profile.html', data)
+
 
 def adoption(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     categories = Category.objects.all()
     animals = Animal.objects.filter(category__title__icontains=q)
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            cart_obj = Order.objects.create(customer=request.user)
+            added = Animal.objects.filter(id=request.POST.get('prod'))
+            cart_obj.animals.set(added)
+        else:
+            return redirect('sign-in')
     return render(request,'adoption.html', {'categories': categories, 'animals': animals})
 
-def about_us(request):
-    about_us_info = AboutUs.objects.first()
-    return render(request, 'about.html', {'about_us_info': about_us_info})
+
 
 def donate(request):
     if request.method == 'POST':

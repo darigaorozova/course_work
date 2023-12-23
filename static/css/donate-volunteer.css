@@ -6,7 +6,6 @@
     margin: auto;
     text-align: center; /* Добавлено для центрирования текста и элементов */
 }
-
 /* Стиль для заголовка формы */
 .form-title {
     text-align: center;
@@ -17,6 +16,12 @@
 .form-group {
     margin-bottom: 15px;
     text-align: left; /* Добавлено для выравнивания текста внутри полей */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-group input{
+    display: block;
 }
 
 /* Стиль для кнопки отправки формы */

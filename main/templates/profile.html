@@ -1,18 +1,5 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 {% block content %}
-    
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-</head>
-<body>
 
     <h2>Profile</h2>
 
@@ -20,10 +7,29 @@
         <p><strong>Name:</strong> {{ user.username }}</p>
         <p><strong>Email:</strong> {{ user.email }}</p>
     </div>
-    
-     <a href="{% url 'Logout' %}" class="logout-link">Logout</a>
 
-</body>
-</html>
+    <a href="{% url 'Logout' %}">Logout</a>
+
+    <div  style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; margin:0 auto; max-width: 80vw;">
+        {% for i in orders %}
+            {% for j in i.animals.all %}
+                <form method="POST" style="margin: 10px; width: 300px">
+                {% csrf_token %}
+                <div class="col">
+                    <div class="card">
+                        <img src="{{ j.imageURL }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ j.name }}</h5>
+                            <h5 class="card-title">{{ j.price }}</h5>
+                            <p class="card-text">{{ j.description }}</p>
+                        </div>
+                        <input style="display: none;" type="number" name="del" id="del" value="{{i.id}}">
+                        <button type="submit" class="btn btn-primary">Cancel</button>
+                    </div>
+                </div>
+            </form>
+            {% endfor %}
+        {% endfor %}
+    </div>
 
 {% endblock %}
